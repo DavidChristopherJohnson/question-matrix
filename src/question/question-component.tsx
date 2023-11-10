@@ -12,7 +12,7 @@ const QuestionComponent = ({
   question,
   onAnswerSubmit,
 }: QuestionComponentParams) => {
-  const [answer, setAnswer] = useState<number>(2);
+  const [answer, setAnswer] = useState<number>();
 
   const buttonText = isLastQuestion ? "Finish" : "Next";
 
@@ -35,7 +35,7 @@ const QuestionComponent = ({
 
       <button 
       style={{height: '30px', width:'100px', fontSize: '16pt'}}
-      onClick={() => onAnswerSubmit(question, answer)}>
+      onClick={() => onAnswerSubmit(question, answer || 0)}>
         {buttonText}
       </button>
     </>
